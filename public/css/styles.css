@@ -1,0 +1,135 @@
+/* -------- Global Reset -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f3f4f7;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+/* -------- Header -------- */
+header {
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #00d1ff;
+}
+
+/* -------- Container -------- */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* -------- Forms -------- */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  resize: none;
+}
+
+form button {
+  display: inline-block;
+  margin-top: 20px;
+  background: #0077cc;
+  padding: 12px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background: #005fa3;
+}
+
+/* -------- Movie List -------- */
+.movie-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.movie-list li {
+  background: #f8f9fb;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 5px solid #0077cc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-list li:hover {
+  background: #eef2f7;
+}
+
+.movie-list a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}
+
+/* -------- Error Messages -------- */
+.errors {
+  background: #ffdddd;
+  border-left: 5px solid #cc0000;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 6px;
+  color: #800000;
+}
+
+/* -------- Footer -------- */
+footer {
+  margin-top: 30px;
+  padding: 15px 0;
+  background: #222;
+  color: #fff;
+  text-align: center;
+}

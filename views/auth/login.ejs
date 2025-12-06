@@ -1,0 +1,34 @@
+<%- include('../partials/header', { title: "Login" }) %>
+
+<h2>Login</h2>
+
+<% if (errors && errors.general) { %>
+  <p style="color:red;"><%= errors.general %></p>
+<% } %>
+
+<form action="/auth/login" method="POST">
+  <div>
+    <label>Email:</label>
+    <input
+      type="email"
+      name="email"
+      value="<%= formData && formData.email ? formData.email : '' %>"
+      required
+    >
+    <% if (errors && errors.email) { %>
+      <p style="color:red;"><%= errors.email %></p>
+    <% } %>
+  </div>
+
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" required>
+    <% if (errors && errors.password) { %>
+      <p style="color:red;"><%= errors.password %></p>
+    <% } %>
+  </div>
+
+  <button type="submit">Login</button>
+</form>
+
+<%- include('../partials/footer') %>
