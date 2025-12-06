@@ -111,13 +111,13 @@ router.post("/login", async (req, res) => {
 
 router.get("/logout", (req, res) => {
   if (!req.session) {
-    return res.redirect("/login");
+    return res.redirect("/auth/login");
   }
   req.session.destroy((err) => {
     if (err) {
       console.error("Logout error:", err);
     }
-    res.redirect("/login");
+    res.redirect("/auth/login");
   });
 });
 
