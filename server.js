@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8000;
 const path = require("path");
 const session = require("express-session");
 const methodOverride = require("method-override");
-const MongoStore = require("connect-mongo");
+
 
 // Models
 const Movie = require("./models/Movie");
@@ -30,13 +30,6 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-      mongoUrl: process.env.MONGO_URI,
-      collectionName: "sessions",
-    }),
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
-    },
   })
 );
 
