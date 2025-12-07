@@ -53,7 +53,10 @@ app.use("/auth", require("./routes/auth"));
 async function startServer() {
   try {
     console.log("Connecting to MongoDB...");
-    await mongoose.connect(CONNECTION_STRING);
+    await mongoose.connect(CONNECTION_STRING,{
+      serverSelectionTimeoutMS: 5000,
+    });
+
     console.log("MongoDB Connected");
 
     app.listen(PORT, () => {

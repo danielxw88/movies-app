@@ -1,20 +1,40 @@
 <%- include('../partials/header', { title: "All Movies" }) %>
 
-<h1>All Movies</h1>
+<div class="container">
+    <h1>All Movies</h1>
 
-<a href="/movies/new">Add New Movie</a>
 
-<ul>
-    <% movies.forEach(movie => { %>
-        <li>
-            <a href="/movies/<%= movie._id %>"><%= movie.name %></a>
-            - <%= movie.year %>
-            - Rating: <%= movie.rating %>
-        </li>
-    <% }) %>
-</ul>
+    <% if (movies.length === 0) { %>
+        <p style="margin-top:20px;">No movies found. Add one to get started!</p>
+    <% } else { %>
+
+        <ul class="movie-list">
+            <% movies.forEach(movie => { %>
+                <li>
+                    <div>
+                        <a href="/movies/<%= movie._id %>"><%= movie.name %></a>
+                        <div style="font-size: 14px; color: #555;">
+                            Year: <%= movie.year %> |
+                            Rating: <%= movie.rating %>
+                            <% if (movie.userId && movie.userId.username) { %>
+                                | Owner: <%= movie.userId.username %>
+                            <% } %>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- Edit button (only visible if current user owns the movie) -->
+                        <% if (user && movie.userId && movie.userId.toString() === user._id.toString()) { %>
+                            <a href="/movies/<%= movie._id %>/edit">
+                                <button>Edit</button>
+                            </a>
+                        <% } %>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+
+    <% } %>
+</div>
 
 <%- include('../partials/footer') %>
-
-
-

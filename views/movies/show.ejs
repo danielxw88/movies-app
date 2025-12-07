@@ -1,17 +1,37 @@
-
 <%- include('../partials/header', { title: "Movie Details" }) %>
+    <div class="container movie-details">
 
-<h1><%= movie.name %></h1>
+        <h1>
+            <%= movie.name %>
+        </h1>
 
-<p><strong>Description:</strong> <%= movie.description %></p>
-<p><strong>Year:</strong> <%= movie.year %></p>
-<p><strong>Genres:</strong> <%= movie.genres %></p>
-<p><strong>Rating:</strong> <%= movie.rating %></p>
-<p><strong>Director:</strong> <%= movie.director %></p>
+        <p><strong>Description:</strong>
+            <%= movie.description %>
+        </p>
+        <p><strong>Year:</strong>
+            <%= movie.year %>
+        </p>
+        <p><strong>Genres:</strong>
+            <%= movie.genres %>
+        </p>
+        <p><strong>Rating:</strong>
+            <%= movie.rating %>
+        </p>
+        <p><strong>Director:</strong>
+            <%= movie.director %>
+        </p>
 
-<a href="/movies/<%= movie._id %>/edit">Edit Movie</a>
-<form action="/movies/<%= movie._id %>?_method=DELETE" method="POST" style="display:inline;">
-    <button type="submit">Delete Movie</button>
-</form>
+        <a href="/movies/<%= movie._id %>/edit">
+            <button class="btn">Edit Movie</button>
+        </a>
+        <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">Delete Movie</button>
+        </form>
 
-<%- include('../partials/footer') %>
+        <br><br>
+
+        <a href="/movies">
+            <button class="btn">Back to Movies</button>
+        </a>
+    </div>
+    <%- include('../partials/footer') %>
