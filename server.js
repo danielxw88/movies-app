@@ -12,7 +12,6 @@ const methodOverride = require("method-override");
 const Movie = require("./models/Movie");
 const User = require("./models/User");
 
-// FIXED Mongo URI (must match your .env)
 const CONNECTION_STRING = process.env.MONGO_URI;
 
 // View Setup
@@ -24,7 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Session Middleware (FIXED)
+// Session Middleware
 app.use(
   session({
     secret: process.env.SESSION_SECRET,

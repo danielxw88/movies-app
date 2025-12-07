@@ -16,7 +16,6 @@ async function isOwner(req, res, next) {
       return res.status(404).send("Movie not found");
     }
 
-    // FIXED: check movie.user instead of movie.userId
     if (
       !req.session.user ||
       !movie.user ||
